@@ -217,7 +217,7 @@ server <- function(input, output, session) {
   
   output$Gleichung <- renderImage({
     
-    filename <- "./www/Gleichung.jpg"
+    filename <- "./www/Equation.jpg"
     list(src = filename)
   }, deleteFile = FALSE)
   
