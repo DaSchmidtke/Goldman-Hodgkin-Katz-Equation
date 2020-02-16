@@ -20,7 +20,7 @@ The output panel of the App provides both, graphical output in form of an oscill
 
 ![Output](/www/Output.jpg)
 
-Finally, you can choose between the following presets:
+Finally, the App allows you to choose between the following presets:
 
 Resting membrane potential of a cephalopod neuron\
 Peak membrane potential of a cephalopod neuron during spiking\
@@ -50,7 +50,7 @@ Make sure that you have R and the following R packages installed on your machine
     
 ## Using the App locally
 
-Once you have installed and loaded all the libraries, you can start the App from the R console using:
+Once you have installed and loaded all the packages, you can start the App from the R console using:
 
     runGitHub( "Goldman-Hodgkin-Katz-Equation", "DaSchmidtke")
     
