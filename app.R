@@ -11,7 +11,7 @@ library(jpeg)
 
 ui <- fluidPage(
   
-  titlePanel("Goldman-Hodgkin-Katz-Gleichung"),
+  titlePanel("Goldman-Hodgkin-Katz-Equation"),
   h2(""),
   
   imageOutput("Gleichung", height = "25%"),
@@ -24,16 +24,16 @@ ui <- fluidPage(
     
     
     column(4,
-           h4("Relative Permeabilitaet"),
+           h4("Relative permeability"),
   
   sliderInput(inputId = "PNa",
-               label = "Natrium-Ionen",
+               label = "Sodium ions",
                value = 0.04, min = 0, max = 20, width = "100%", step = 0.04),
   sliderInput(inputId = "PK",
-               label = "Kalium-Ionen",
+               label = "Potassium ions",
                value = 1, min = 0, max = 20, width = "100%"),
   sliderInput(inputId = "PCl",
-               label = "Chlorid-Ionen",
+               label = "Chloride ions",
                value = 0.45, min = 0, max = 20, width = "100%", step = 0.04)
   
   ),
@@ -42,16 +42,16 @@ ui <- fluidPage(
     
   column(4,
          
-         h4("Innenkonzentration [mmol/l]"),
+         h4("Intracellular concentration [mmol/l]"),
   
   sliderInput(inputId = "IntraNa",
-               label = "Natrium-Ionen",
+               label = "Sodium ions",
                value = 15, min = 0, max = 600, width = "100%"),
   sliderInput(inputId = "IntraK",
-               label = "Kalium-Ionen",
+               label = "Potassium ions",
                value = 140, min = 0, max = 600, width = "100%"),
   sliderInput(inputId = "IntraCl",
-               label = "Chlorid-Ionen",
+               label = "Chloride ions",
                value = 10, min = 0, max = 600, width = "100%")
   
     
@@ -59,16 +59,16 @@ ui <- fluidPage(
     
   
     column(4,
-           h4("Aussenkonzentration [mmol/l]"),
+           h4("Extracellular concentration [mmol/l]"),
   
   sliderInput(inputId = "ExtraNa",
-               label = "Natrium-Ionen",
+               label = "Sodium ions",
                value = 150, min = 0, max = 600, width = "100%"),
   sliderInput(inputId = "ExtraK",
-               label = "Kalium-Ionen",
+               label = "Potassium ions",
                value = 5, min = 0, max = 600, width = "100%"),
   sliderInput(inputId = "ExtraCl",
-               label = "Chlorid-Ionen",
+               label = "Chloride ions",
                value = 120, min = 0, max = 600, width = "100%")
     ),
   
@@ -76,7 +76,7 @@ ui <- fluidPage(
   
     column(4,
            h2(""),
-           h3("Oszillogramm"),
+           h3("Oscillogram"),
   #setBackgroundImage(src = "Oszi.jpg"),
   #img(src = "Oszi.jpg", height = 300, width = 600),
   plotOutput(outputId = "plot1")
@@ -85,12 +85,12 @@ ui <- fluidPage(
   
   column(4,
          h2(""),
-         h3("Variablen"),
+         h3("Variables"),
          uiOutput(outputId = "Perms"),
          uiOutput(outputId = "Intras"),
          uiOutput(outputId = "Extras"),
          h4(" "),
-         h3("Konstanten"),
+         h3("Constants"),
          h5("R =  8.314 (kPa*L)/(mol*K)"),
          h5(paste("T = 310.150 K \u2259 37\u00B0C")),
          h5("F = 96485.332 A/mol")
@@ -100,7 +100,7 @@ ui <- fluidPage(
          #setBackgroundImage(src = "Oszi.jpg"),
          #img(src = "Oszi.jpg", height = 300, width = 600),
          #plotOutput(outputId = "plot1"),
-         h3("Berechnungen"),
+         h3("Calculations"),
          #setBackgroundImage(src = "Oszi.jpg"),
          #img(src = "Oszi.jpg", height = 300, width = 600),
          #plotOutput(outputId = "plot1"),
@@ -108,12 +108,12 @@ ui <- fluidPage(
          uiOutput(outputId = "MP2"),
          uiOutput(outputId = "MP3"),
          uiOutput(outputId = "MP4"),
-         radioButtons(inputId = "Presets", h3("Voreinstellungen"),
-                     choices = list("Keine"=1, 
-                                    "Ruhepotential: Cephalopoda"=2, 
-                                    "Aktionspotential (Peak): Cephalopoda"=3, 
-                                    "Ruhepotential: Mammalia"=4, 
-                                    "Aktionspotential (Peak): Mammalia"=5), selected=1)
+         radioButtons(inputId = "Presets", h3("Presets"),
+                     choices = list("None"=1, 
+                                    "Resting potential: Cephalopoda"=2, 
+                                    "Action potential (Peak): Cephalopoda"=3, 
+                                    "Resting potential: Mammalia"=4, 
+                                    "Action potential (Peak): Mammalia"=5), selected=1)
 
   )
   
@@ -222,39 +222,39 @@ server <- function(input, output, session) {
   }, deleteFile = FALSE)
   
   output$MP <- renderUI({
-    paste("Membranpotential = ", as.character(round((8.314*310.15/96485.33289)*log(((input$PNa*input$ExtraNa)+(input$PK*input$ExtraK)+(input$PCl*input$IntraCl))/((input$PNa*input$IntraNa)+(input$PK*input$IntraK)+(input$PCl*input$ExtraCl)))*1000, digits=2)), " mV")
+    paste("Membrane potential = ", as.character(round((8.314*310.15/96485.33289)*log(((input$PNa*input$ExtraNa)+(input$PK*input$ExtraK)+(input$PCl*input$IntraCl))/((input$PNa*input$IntraNa)+(input$PK*input$IntraK)+(input$PCl*input$ExtraCl)))*1000, digits=2)), " mV")
     #paste("Membranpotential = ", as.character((8.314*310.15/96485.33289)*input$ExtraNa))
           #*log(((input$PNa*input$ExtraNa)+(input$PK*input$ExtraK)+(input$PCl*input$IntraCl))/((input$PNa*input$IntraNa)+(input$PK*input$IntraK)+(input$PCl*input$ExtraCl)))))
     })
   
   output$MP2 <- renderUI({
-    paste("Nernstpotential (Na) = ", as.character(round((8.314*310.15/96485.33289)*log(input$ExtraNa/input$IntraNa)*1000, digits=2)), " mV")
+    paste("Nernst potential (Na) = ", as.character(round((8.314*310.15/96485.33289)*log(input$ExtraNa/input$IntraNa)*1000, digits=2)), " mV")
     #paste("Membranpotential = ", as.character((8.314*310.15/96485.33289)*input$ExtraNa))
     #*log(((input$PNa*input$ExtraNa)+(input$PK*input$ExtraK)+(input$PCl*input$IntraCl))/((input$PNa*input$IntraNa)+(input$PK*input$IntraK)+(input$PCl*input$ExtraCl)))))
   })
   
   output$MP3 <- renderUI({
-    paste("Nernstpotential (K) = ", as.character(round((8.314*310.15/96485.33289)*log(input$ExtraK/input$IntraK)*1000, digits=2)), " mV")
+    paste("Nernst potential (K) = ", as.character(round((8.314*310.15/96485.33289)*log(input$ExtraK/input$IntraK)*1000, digits=2)), " mV")
     #paste("Membranpotential = ", as.character((8.314*310.15/96485.33289)*input$ExtraNa))
     #*log(((input$PNa*input$ExtraNa)+(input$PK*input$ExtraK)+(input$PCl*input$IntraCl))/((input$PNa*input$IntraNa)+(input$PK*input$IntraK)+(input$PCl*input$ExtraCl)))))
   })
   
   output$MP4 <- renderUI({
-    paste("Nernstpotential (Cl) = ", as.character(round((8.314*310.15/96485.33289)*log(input$IntraCl/input$ExtraCl)*1000, digits=2)), " mV")
+    paste("Nernst potential (Cl) = ", as.character(round((8.314*310.15/96485.33289)*log(input$IntraCl/input$ExtraCl)*1000, digits=2)), " mV")
     #paste("Membranpotential = ", as.character((8.314*310.15/96485.33289)*input$ExtraNa))
     #*log(((input$PNa*input$ExtraNa)+(input$PK*input$ExtraK)+(input$PCl*input$IntraCl))/((input$PNa*input$IntraNa)+(input$PK*input$IntraK)+(input$PCl*input$ExtraCl)))))
   })
   
   output$Perms <- renderUI({
-    HTML(paste("Relative Permeabilitaeten: ", paste("K: ", input$PK, "; Na: ", input$PNa, "; Cl: ", input$PCl, sep = ""), sep="<br/>"))
+    HTML(paste("Relative permeabilities: ", paste("K: ", input$PK, "; Na: ", input$PNa, "; Cl: ", input$PCl, sep = ""), sep="<br/>"))
   })
   
   output$Extras <- renderUI({
-    HTML(paste("Aussenkonzentrationen: ", paste("K: ", input$ExtraK, " mmol/l; Na: ", input$ExtraNa, " mmol/l; Cl: ", input$ExtraCl, " mmol/l"), sep="<br/>"))
+    HTML(paste("Extracellular concentrations: ", paste("K: ", input$ExtraK, " mmol/l; Na: ", input$ExtraNa, " mmol/l; Cl: ", input$ExtraCl, " mmol/l"), sep="<br/>"))
   })
   
   output$Intras <- renderUI({
-    HTML(paste("Innenkonzentrationen: ", paste("K: ", input$IntraK, " mmol/l; Na: ", input$IntraNa, " mmol/l; Cl: ", input$IntraCl, " mmol/l"), sep="<br/>"))
+    HTML(paste("Intracellular concentrations: ", paste("K: ", input$IntraK, " mmol/l; Na: ", input$IntraNa, " mmol/l; Cl: ", input$IntraCl, " mmol/l"), sep="<br/>"))
   })
   
   shinyjs::disable("PK")
@@ -289,8 +289,8 @@ server <- function(input, output, session) {
       #geom_hline(yintercept=0, size=0.5)+
       xlim(0,4)+
       ylim(-100,100)+
-      xlab("Zeit [ms]")+
-      ylab("Spannung [mV]")+
+      xlab("Time [ms]")+
+      ylab("Voltage [mV]")+
       theme(axis.text=element_text(size=12), axis.title=element_text(size=14,face="bold"))+
       theme(panel.background = element_rect(fill = 'dark green', colour = 'black'))+
       theme(panel.grid.minor = element_blank())
