@@ -7,6 +7,7 @@ The equation looks as follows:
 
 ![Equation](/www/Equation.jpg)
 
+\
 Within the app, you can choose different values for the relative permeabilities as well as the inner and outer concentrations of potassium, sodium, and chloride to explore how changing these variables influences the membrane potential.
 
 
