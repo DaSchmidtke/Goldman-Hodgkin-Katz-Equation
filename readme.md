@@ -12,6 +12,18 @@ Within the app, you can choose different values for the relative permeabilities 
 
 ![Sliders](/www/Slider.jpg)
 
+Please note that the permeability of potassium cannot be changed, as the permeabilities for sodium and chloride ions are specified relative to that for potassium (P(K) = 1).
+
+The output panel of the App provides both, graphical output in form of an oscillogram, showing the current membrane potential in mV, and text output for the calculated membrane potentials as well as the Nernst potentials for each ion species at the chosen concentrations.
+
+![Output](/www/Output.jpg)
+
+Finally, you can choose between the 4 following presets:
+
+Resting membrane potential of a cephalopod neuron\
+Peak membrane potential of a cephalopod neuron during spiking\
+Resting membrane potential of a mammalian neuron\
+Peak membrane potential of a mammalian neuron during spiking
 
 ## Local installation
 
