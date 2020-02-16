@@ -2,6 +2,10 @@
 
 This shiny-app is an interactive version of the Goldman-Hodkin-Katz equation used to calcualte the resting potential across a cell membrane in dependence on the relative permeabilities as well as the inner and outer concentrations of different ion species (potassium, sodium, and chloride).
 
+![Equation](/www/Equation.jpg)
+
+
+
 ## Local installation
 
 Make sure that you have R and the following R packages installed on your machine and loaded in your R session:
