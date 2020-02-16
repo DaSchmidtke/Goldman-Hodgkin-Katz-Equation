@@ -20,7 +20,7 @@ The output panel of the App provides both, graphical output in form of an oscill
 
 ![Output](/www/Output.jpg)
 
-Finally, you can choose between the 4 following presets:
+Finally, you can choose between the following presets:
 
 Resting membrane potential of a cephalopod neuron\
 Peak membrane potential of a cephalopod neuron during spiking\
