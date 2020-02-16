@@ -8,7 +8,7 @@ The equation looks as follows:
 ![Equation](/www/Equation.jpg)
 
 ### Interactive user interface
-Within the app, you can choose different values for the relative permeabilities as well as the inner and outer concentrations of potassium, sodium, and chloride to explore how changing these variables influences the membrane potential.
+Within the App, you can choose different values for the relative permeabilities as well as the inner and outer concentrations of potassium, sodium, and chloride to explore how changing these variables influences the membrane potential.
 
 
 ![Sliders](/www/Slider.jpg)
@@ -16,7 +16,7 @@ Within the app, you can choose different values for the relative permeabilities 
 Please note that the permeability of potassium cannot be changed, as the permeabilities for sodium and chloride ions are specified relative to that for potassium (P(K) = 1).
 
 ### Output
-The output panel of the App provides both, graphical output in form of an oscillogram, showing the current membrane potential in mV, and text output for the calculated membrane potential as well as the Nernst potentials for each ion species at the chosen concentrations.
+The output panel of the App provides both, graphical output in form of an oscillogram, showing the current membrane potential in mV, and text output of the calculated membrane potential as well as the Nernst potentials for each ion species at the chosen concentrations.
 
 ![Output](/www/Output.jpg)
 
