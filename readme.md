@@ -62,7 +62,7 @@ German version:
 https://daschmidtke.shinyapps.io/goldman_app/
 
 English version:
-ToDo
+https://daschmidtke.shinyapps.io/Goldman-Hodgkin-Katz-Equation/
 
 Access to the shiny server, however, is limited to 25 hours per month, so these links are for testing purposes only. If you want to use the App for longer durations, please use a local installation.
 
