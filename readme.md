@@ -59,7 +59,7 @@ Once you have installed and loaded all the packages, you can start the App from 
 An online version of the App can be found here:
 
 German version:
-https://daschmidtke.shinyapps.io/goldman_app/
+https://daschmidtke.shinyapps.io/Goldman-Hodgkin-Katz-Gleichung/
 
 English version:
 https://daschmidtke.shinyapps.io/Goldman-Hodgkin-Katz-Equation/
