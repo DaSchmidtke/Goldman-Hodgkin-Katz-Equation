@@ -27,7 +27,7 @@ Peak membrane potential of a cephalopod neuron during spiking\
 Resting membrane potential of a mammalian neuron\
 Peak membrane potential of a mammalian neuron during spiking
 
-
+ 
 ## Local installation
 
 Make sure that you have R and the following R packages installed on your machine and loaded in your R session:
