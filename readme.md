@@ -18,7 +18,7 @@ Please note that the permeability of potassium cannot be changed, as the permeab
 ### Output
 The output panel of the App provides both, graphical output in form of an oscillogram, showing the current membrane potential in mV, and text output of the calculated membrane potential as well as the Nernst potentials for each ion species at the chosen concentrations.
 
-![Output](/www/Output.jpg)
+![Output](/www/Output2.jpg)
 
 Finally, the App allows you to choose between the following presets:
 
